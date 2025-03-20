@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:user_profile/provider/user_provider.dart';
+import 'package:user_profile/widgets/theme-toggle-btn.dart';
 
 class UserBio extends ConsumerWidget {
   const UserBio({super.key});
@@ -20,6 +21,7 @@ class UserBio extends ConsumerWidget {
         ),
         backgroundColor: const Color.fromARGB(221, 127, 171, 248),
         centerTitle: false,
+        actions: [ThemeToggleButton()],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -67,7 +69,7 @@ class UserBio extends ConsumerWidget {
                 children: [
                   Text(
                     "Name:   ",
-                    style: TextStyle(fontWeight: FontWeight.bold,color: const Color.fromARGB(175, 0, 0, 0)),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text(
                     selectedUser.name,
@@ -83,7 +85,7 @@ class UserBio extends ConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Age:   ", style: TextStyle(fontWeight: FontWeight.bold,color: const Color.fromARGB(175, 0, 0, 0))),
+                  Text("Age:   ", style: TextStyle(fontWeight: FontWeight.bold,)),
                   Text(
                     selectedUser.age.toString(),
                     style: TextStyle(
@@ -100,9 +102,7 @@ class UserBio extends ConsumerWidget {
                 children: [
                   Text(
                     "Email:   ",
-                    style: TextStyle(fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(175, 0, 0, 0),
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold,                    ),
                   ),
                   Text(
                     selectedUser.email,
@@ -121,7 +121,6 @@ class UserBio extends ConsumerWidget {
                   Text(
                     "Phone:   ",
                     style: TextStyle(fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(175, 0, 0, 0),
                     ),
                   ),
                   Text(
@@ -141,7 +140,6 @@ class UserBio extends ConsumerWidget {
                   Text(
                     "Address:   ",
                     style: TextStyle(fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(175, 0, 0, 0),
                     ),
                   ),
                   Text(
